@@ -1,53 +1,189 @@
-<html>
+<!DOCTYPE html>
+<html lang="english">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AcartZ Login</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcartZ E-Commerce</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="main-container">
+    <header>
 
-  <div class="logo">
-    <span class="orange">A</span>cart<span class="orange">Z</span>
-  </div>
+        <div class="top-header">
 
-  <div class="card">
+            
+           <div class="logo">
+            <p class="blue"><span class="orange">A</span>cart<span class="orange">Z</span></p>
+        
+        </div>
 
-    <div class="form-box">
+            
+            <div class="search-box">
 
-      <h2>Sign in to your Account</h2>
+                <input type="text"
+                    placeholder="Search for products and more...">
 
-      <div class="input-group">
-        <label>Email / Username:</label>
-        <input type="text" placeholder="Enter your Email or Name">
-      </div>
+                <select>
+                    <option>All Categories</option>
+                    <option>Fashion</option>
+                    <option>Electronics</option>
+                    <option>Accessories</option>
+                    <option>Footwear</option>
+                </select>
 
-      <div class="input-group">
-        <label>Password:</label>
-        <input type="password" placeholder="Enter your Password">
-      </div>
+                <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
 
-      <a href="forgot.html" class="forgot">Forgot Password?</a>
+            </div>
 
-      <div class="toggle-buttons">
-        <button>Customer</button>
-        <button">Vendor</button>
-      </div>
+            
+            <div class="header-icons">
 
-      <a href="enter.html"><button class="login-btn">Login</button></a>
+                
+                <div class="icon-box">
+                    <i class="fa-solid fa-truck"></i>
+                    <span>Order</span>
+                </div>
 
-      <p class="bottom-text">
-        Don't have an account?
-        <a href="register.html">Register</a>
-      </p>
+                
+                <div class="icon-box">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>Wishlist</span>
+                </div>
 
-    </div>
+                
+                <div class="icon-box">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Cart</span>
+                </div>
 
-  </div>
+                
+                <div class="account">
 
-</div>
+                    <i class="fa-regular fa-user"></i>
+
+                    <div>
+                        <small>Sign in</small>
+                        <h4>My account</h4>
+                    </div>
+
+                    <i class="fa-solid fa-angle-down"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <button class="category-btn">
+                All Categories
+                <i class="fa-solid fa-angle-down"></i>
+            </button>
+
+            <ul>
+
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#">Categories</a></li>
+
+                <li><a href="#">Deals</a></li>
+
+                <li><a href="#">Stores</a></li>
+
+                <li><a href="#">Blog</a></li>
+
+                <li><a href="#">About Us</a></li>
+
+                <li><a href="#">Contact Us</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <button class="slide-btn left">
+            <i class="fa-solid fa-angle-left"></i>
+        </button>
+
+        
+        <div class="hero-content">
+
+            <h1>Upgrade Your</h1>
+
+            <h2>Style with <span>AcartZ</span></h2>
+
+        </div>
+
+        <button class="slide-btn right">
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+
+    </section>
+
+    <section class="categories">
+
+        <h3>Shop by Categories</h3>
+
+        <div class="category-container">
+
+            <div class="category-card">
+
+                <img src="./watch.jpeg"
+                    alt="Accessories">
+
+                <p>Accessories</p>
+
+            </div>
+
+            <div class="category-card">
+
+                <img src="./shoes.jpeg"
+                    alt="Footwear">
+
+                <p>Footwears</p>
+
+            </div>
+
+            <div class="category-card">
+
+                <img src="./bag.jpeg"
+                    alt="Women Handbags">
+
+                <p>Women Handbags</p>
+
+            </div>
+
+
+            <div class="category-card">
+
+                <img src="./electronics.jpeg"
+                    alt="Electronics">
+
+                <p>Electronics</p>
+
+            </div>
+
+        </div>
+
+    </section>
 
 </body>
+
 </html>
