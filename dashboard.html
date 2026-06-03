@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AcartZ</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styling.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Logo -->
+    <div class="logo">
+            <p class="blue"><span class="orange">A</span>cart<span class="orange">Z</span></p>
+      <p>Marketplace Admin</p>
+    </div>
+
+    <!-- Menu -->
+    <ul class="menu">
+
+      <li class="active">
+        <a href="#">
+          <i class="fa-solid fa-table-columns"></i>
+          Dashboard
+        </a>
+      </li>
+
+      <li>
+        <a href="pages/products.html">
+          <i class="fa-solid fa-box"></i>
+          Products
+        </a>
+      </li>
+
+      <li>
+        <a href="pages/orders.html">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Orders
+        </a>
+      </li>
+
+      <li>
+        <a href="pages/reviews.html">
+          <i class="fa-solid fa-star"></i>
+          Reviews
+        </a>
+      </li>
+
+      <li>
+        <a href="pages/wallet.html">
+          <i class="fa-solid fa-wallet"></i>
+          Wallet
+        </a>
+      </li>
+
+      <li>
+        <a href="pages/settings.html">
+          <i class="fa-solid fa-gear"></i>
+          Settings
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- Logout -->
+    <div class="logout">
+      <a href="#">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </a>
+    </div>
+
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Navbar -->
+    <div class="navbar">
+
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search orders, products...">
+      </div>
+
+      <div class="nav-right">
+
+        <div class="icon">
+          <i class="fa-regular fa-bell"></i>
+        </div>
+
+        <div class="icon">
+          <i class="fa-regular fa-envelope"></i>
+        </div>
+
+        <div class="user-icon">
+          <i class="fa-regular fa-user"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Dashboard Heading -->
+    <h1 class="dashboard-title">Dashboard</h1>
+
+    <!-- Cards Section -->
+    <div class="cards-container">
+
+      <div class="card sales-card">
+
+        <div class="card-top">
+          <span>Total Sales</span>
+          <span class="percentage">+24%</span>
+        </div>
+
+        <h2>₹124,592</h2>
+        <p>Last 30 days revenue</p>
+
+      </div>
+
+      <div class="card orders-card">
+
+        <div class="card-top">
+          <span>Orders</span>
+          <span class="percentage">+14%</span>
+        </div>
+
+        <h2>1,284</h2>
+        <p>Total orders placed</p>
+
+      </div>
+
+      <div class="card conversion-card">
+
+        <div class="card-top">
+          <span>Conversion Rate</span>
+          <span class="percentage red">-2.4%</span>
+        </div>
+
+        <h2>3.8%</h2>
+        <p>Compared to last month</p>
+
+      </div>
+
+      <div class="card delivery-card">
+
+        <div class="card-top">
+          <span>Deliveries Pending</span>
+          <span class="percentage">+8%</span>
+        </div>
+
+        <h2>42</h2>
+        <p>Orders awaiting shipment</p>
+
+      </div>
+
+    </div>
+    <section class="recent-orders">
+
+    <div class="table-header">
+        <h2>Recent Orders</h2>
+        <button>View All</button>
+    </div>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Status</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>#ORD001</td>
+                <td>Rohith</td>
+                <td>Wireless Mouse</td>
+                <td><span class="completed">Completed</span></td>
+                <td>₹1,200</td>
+            </tr>
+
+            <tr>
+                <td>#ORD002</td>
+                <td>Arun</td>
+                <td>Keyboard</td>
+                <td><span class="pending">Pending</span></td>
+                <td>₹2,400</td>
+            </tr>
+
+            <tr>
+                <td>#ORD003</td>
+                <td>Karthik</td>
+                <td>Monitor</td>
+                <td><span class="shipping">Shipping</span></td>
+                <td>₹12,500</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+  </main>
+
+</div>
+
+<script src="js/data.js"></script>
+
+</body>
+</html>

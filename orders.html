@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="orders-page">
+
+    <div class="orders-header">
+
+        <h2>Orders Management</h2>
+
+        <input type="text"
+        placeholder="Search Orders..."
+        class="order-search">
+
+    </div>
+
+    <div class="orders-table">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Product</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>#ORD001</td>
+
+                    <td>Rohith</td>
+
+                    <td>Wireless Mouse</td>
+
+                    <td>₹1200</td>
+
+                    <td>
+                        <span class="completed">
+                            Delivered
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="view-btn">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>#ORD002</td>
+
+                    <td>Arun</td>
+
+                    <td>Keyboard</td>
+
+                    <td>₹2400</td>
+
+                    <td>
+                        <span class="pending">
+                            Pending
+                        </span>
+                    </td>
+
+                    <td>
+                        <button class="view-btn">
+                            View
+                        </button>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>
