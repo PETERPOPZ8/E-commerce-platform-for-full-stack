@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AcartZ – Sony WH-1000XM6</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="nav-left">
+      <button class="logo" onclick="showPage('product')">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>Acart<span class="logo-z">Z</span></span>
+      </button>
+      <div class="category-dropdown">
+        <span>All Categories</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for products brands and more" />
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <div class="nav-icons">
+      <i class="fa-regular fa-heart"></i>
+      <div class="cart-icon" onclick="showPage('cart')">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" id="cartBadge">1</span>
+      </div>
+      <div class="avatar"><i class="fa-solid fa-user"></i></div>
+    </div>
+  </header>
+
+  <!-- ===== PRODUCT PAGE ===== -->
+  <div id="productPage" class="page active">
+    <div class="breadcrumb">
+      <span class="bc-link">Home</span> <span>›</span>
+      <span class="bc-link">Audio</span> <span>›</span>
+      <span class="bc-link">Headphones</span> <span>›</span>
+      <span class="current">Sony WH-1000XM6</span>
+    </div>
+
+    <div class="product-container">
+      <!-- Left: Thumbnails + Main Image -->
+      <div class="product-gallery">
+        <div class="thumbnails">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=80&h=80&fit=crop" alt="thumb1" class="thumb active" onclick="setMainImg(this)"/>
+          <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=80&h=80&fit=crop" alt="thumb2" class="thumb" onclick="setMainImg(this)"/>
+          <img src="https://images.unsplash.com/photo-1545127398-14699f92334b?w=80&h=80&fit=crop" alt="thumb3" class="thumb" onclick="setMainImg(this)"/>
+          <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=80&h=80&fit=crop" alt="thumb4" class="thumb" onclick="setMainImg(this)"/>
+        </div>
+        <div class="main-image">
+          <img id="mainProductImg" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=420&h=380&fit=crop" alt="Sony WH-1000XM6"/>
+        </div>
+      </div>
+
+      <!-- Right: Product Info -->
+      <div class="product-info">
+        <div class="product-title-row">
+          <h1>Sony WH-1000XM6 Wireless Headphones</h1>
+          <div class="title-actions">
+            <button class="icon-btn"><i class="fa-solid fa-share-nodes"></i></button>
+            <button class="icon-btn" id="wishlistBtn" onclick="toggleWishlist()"><i class="fa-regular fa-heart"></i></button>
+          </div>
+        </div>
+
+        <div class="rating-row">
+          <div class="stars">
+            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <span class="review-count">4.8 (2,145 Reviews)</span>
+        </div>
+        <p class="bought-badge"><i class="fa-solid fa-fire-flame-curved"></i> 2500+ bought in past month</p>
+
+        <div class="price-row">
+          <span class="current-price">₹3,489</span>
+          <span class="mrp">M.R.P.: <del>₹5,999</del></span>
+          <span class="discount-tag">17% OFF</span>
+        </div>
+        <p class="tax-note">Inclusive of all taxes</p>
+
+        <div class="color-section">
+          <span class="label">Color:</span>
+          <div class="color-swatches">
+            <span class="swatch black active" onclick="selectColor(this)"></span>
+            <span class="swatch silver" onclick="selectColor(this)"></span>
+            <span class="swatch blue" onclick="selectColor(this)"></span>
+          </div>
+        </div>
+
+        <div class="quantity-section">
+          <span class="label">Quantity:</span>
+          <div class="qty-control">
+            <button onclick="changeQty(-1)">−</button>
+            <span id="qtyDisplay">1</span>
+            <button onclick="changeQty(1)">+</button>
+          </div>
+          <span class="in-stock"><i class="fa-solid fa-circle-check"></i> In Stock</span>
+        </div>
+
+        <div class="product-actions">
+          <button class="btn-primary" onclick="addToCart()">
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+          </button>
+          <button class="btn-secondary" onclick="showPage('cart')">
+            <i class="fa-solid fa-bolt"></i> Buy Now
+          </button>
+        </div>
+
+        <div class="feature-pills">
+          <div class="pill"><i class="fa-solid fa-wave-square"></i><div><strong>Industry Leading</strong><span>Noise Cancellation</span></div></div>
+          <div class="pill"><i class="fa-solid fa-battery-full"></i><div><strong>Up to 30 Hours</strong><span>Battery Life</span></div></div>
+          <div class="pill"><i class="fa-brands fa-bluetooth-b"></i><div><strong>Bluetooth 5.3</strong><span>Multipoint Connection</span></div></div>
+        </div>
+
+        <div class="warranty-row">
+          <div class="w-item"><i class="fa-solid fa-shield-halved"></i><span>1 Year Warranty</span></div>
+          <div class="w-item"><i class="fa-solid fa-rotate-left"></i><span>10 Days Return Policy</span></div>
+          <div class="w-item"><i class="fa-solid fa-truck"></i><span>Free Shipping</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="reviews-section" id="reviews">
+      <h2>Customer Reviews (2,145)</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="reviewer">
+            <span class="avatar-chip purple">V</span>
+            <div>
+              <strong>Vishnupriya</strong>
+              <span class="rev-date">2 May 2025</span>
+            </div>
+          </div>
+          <div class="rev-stars">
+            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <p>Absolutely amazing sound quality.</p>
+          <button class="helpful-btn"><i class="fa-regular fa-thumbs-up"></i> Helpful (120)</button>
+        </div>
+        <div class="review-card">
+          <div class="reviewer">
+            <span class="avatar-chip green">P</span>
+            <div>
+              <strong>Priya Sharma</strong>
+              <span class="rev-date">30 Apr 2025</span>
+            </div>
+          </div>
+          <div class="rev-stars">
+            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <p>Super comfortable for long hours.</p>
+          <button class="helpful-btn"><i class="fa-regular fa-thumbs-up"></i> Helpful (120)</button>
+        </div>
+        <div class="review-card">
+          <div class="reviewer">
+            <span class="avatar-chip red">A</span>
+            <div>
+              <strong>Arjun Mehta</strong>
+              <span class="rev-date">25 Apr 2025</span>
+            </div>
+          </div>
+          <div class="rev-stars">
+            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <p>Great product overall!!</p>
+          <button class="helpful-btn"><i class="fa-regular fa-thumbs-up"></i> Helpful (100)</button>
+        </div>
+      </div>
+      <button class="view-all-reviews">View All Reviews <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!-- ===== CART PAGE ===== -->
+  <div id="cartPage" class="page">
+    <div class="breadcrumb">
+      <span class="bc-link" onclick="showPage('product')">Home</span> <span>›</span>
+      <span class="current">Shopping Cart</span>
+    </div>
+
+    <div class="cart-header">
+      <i class="fa-solid fa-cart-shopping cart-header-icon"></i>
+      <h2>Shopping Cart <span class="cart-count">(1 item)</span></h2>
+    </div>
+
+    <div class="cart-layout">
+      <!-- Cart Items -->
+      <div class="cart-items">
+        <div class="cart-item">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=160&h=140&fit=crop" alt="Headphones"/>
+          <div class="cart-item-details">
+            <h3>Sony WH-1000XM6 Wireless Headphones</h3>
+            <p class="stock-label">In Stock</p>
+            <div class="cart-price-row">
+              <span class="cart-price">₹3,489</span>
+              <span class="cart-mrp"><del>₹5,990</del></span>
+              <span class="discount-tag">17% OFF</span>
+            </div>
+            <p class="tax-note">Inclusive of all taxes</p>
+            <div class="cart-meta">
+              <span><i class="fa-solid fa-shield-halved"></i> 1 Year Warranty</span>
+              <span><i class="fa-solid fa-rotate-left"></i> 10 Days Return Policy</span>
+              <span><i class="fa-solid fa-truck"></i> Free Shipping</span>
+            </div>
+            <div class="cart-qty-row">
+              <div class="qty-control">
+                <button onclick="changeCartQty(-1)">−</button>
+                <span id="cartQtyDisplay">1</span>
+                <button onclick="changeCartQty(1)">+</button>
+              </div>
+              <span class="cart-item-total">₹3,489</span>
+            </div>
+          </div>
+          <button class="remove-btn" onclick="removeItem()"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+
+        <!-- You Might Also Like -->
+        <div class="also-like">
+          <h4>You might also like</h4>
+          <div class="also-grid">
+            <div class="also-card">
+              <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=100&h=80&fit=crop" alt="Case"/>
+              <p class="also-name">Sony Headphone Case(Black)</p>
+              <div class="also-stars">
+                <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>(1,245)</span>
+              </div>
+              <p class="also-price">₹1,299</p>
+              <button class="btn-outline-sm"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+            </div>
+            <div class="also-card">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=100&h=80&fit=crop" alt="Stand"/>
+              <p class="also-name">Headphone Stand Aluminium</p>
+              <div class="also-stars">
+                <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>(882)</span>
+              </div>
+              <p class="also-price">₹899</p>
+              <button class="btn-outline-sm"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+            </div>
+            <div class="also-card">
+              <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=100&h=80&fit=crop" alt="AUX Cable"/>
+              <p class="also-name">Sony AUX Cable 1.2m</p>
+              <div class="also-stars">
+                <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span>(657)</span>
+              </div>
+              <p class="also-price">₹499</p>
+              <button class="btn-outline-sm"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Bar -->
+        <div class="trust-bar">
+          <div class="trust-item"><i class="fa-solid fa-lock"></i><div><strong>Secure Shopping</strong><span>Your data is protected</span></div></div>
+          <div class="trust-item"><i class="fa-solid fa-rotate-left"></i><div><strong>Easy Returns</strong><span>10 days return policy</span></div></div>
+          <div class="trust-item"><i class="fa-solid fa-truck-fast"></i><div><strong>Fast Delivery</strong><span>Free shipping on all orders</span></div></div>
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div class="summary-row">
+          <span>Subtotal (1 item)</span><span>₹3,489</span>
+        </div>
+        <div class="summary-row discount">
+          <span>Discount</span><span>−₹710</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span><span class="free-tag">Free</span>
+        </div>
+        <hr/>
+        <div class="summary-row total">
+          <span>Total</span><span>₹2,779</span>
+        </div>
+        <p class="tax-note-sm">Inclusive of all taxes</p>
+        <div class="savings-badge">
+          <i class="fa-solid fa-tag"></i> You saved ₹710 on this order!
+        </div>
+        <button class="btn-checkout" onclick="alert('Proceeding to checkout...')">
+          Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="btn-continue" onclick="showPage('product')">
+          <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+        </button>
+        <div class="payment-methods">
+          <p>We Accept</p>
+          <div class="pay-icons">
+            <span class="pay-chip visa">VISA</span>
+            <span class="pay-chip upi">UPI</span>
+            <span class="pay-chip paytm">Paytm</span>
+            <span class="pay-chip gpay">G Pay</span>
+          </div>
+        </div>
+        <div class="support-row">
+          <i class="fa-solid fa-headset"></i>
+          <div><strong>24/7 Support</strong><span>We're here to help</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
